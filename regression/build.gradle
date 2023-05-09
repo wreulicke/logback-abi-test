@@ -1,0 +1,35 @@
+plugins {
+  id "application"
+}
+
+repositories {
+    mavenCentral() 
+    mavenLocal()
+}
+
+
+dependencies {
+    constraints {
+        implementation 'com.linecorp.armeria:armeria:1.23.1'
+        implementation 'com.linecorp.armeria:armeria-logback:1.23.1'
+        // commit id 1965ea04fb68ecd5cbdf6c15880112bdf5ee03bf
+        // implementation 'com.linecorp.armeria:armeria-logback:1.23.2-SNAPSHOT'
+    }
+    implementation 'com.linecorp.armeria:armeria'
+    implementation('com.linecorp.armeria:armeria-logback') {
+        exclude group: 'com.linecorp.armeria'
+    }
+    implementation 'ch.qos.logback:logback-classic:1.4.7'
+    implementation 'org.slf4j:slf4j-api:2.0.7'
+    implementation 'net.logstash.logback:logstash-logback-encoder:7.3'
+  
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1' 
+}
+
+application {
+    mainClass = 'test.Main' 
+}
+
+tasks.named('test') {
+    useJUnitPlatform() 
+}
