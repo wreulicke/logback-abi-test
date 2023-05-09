@@ -12,6 +12,7 @@ dependencies {
     constraints {
         implementation 'com.linecorp.armeria:armeria:1.23.1'
         implementation 'com.linecorp.armeria:armeria-logback:1.23.1'
+        // Below version fixes the issue https://github.com/line/armeria/issues/4855
         // commit id 1965ea04fb68ecd5cbdf6c15880112bdf5ee03bf
         // implementation 'com.linecorp.armeria:armeria-logback:1.23.2-SNAPSHOT'
     }
